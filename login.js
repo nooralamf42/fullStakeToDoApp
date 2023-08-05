@@ -24,6 +24,7 @@ const submitForm = () =>{
     })
     .then(response=> response.json())
     .then(data=>{
+        loader.classList.add("d-none")
        if(data.hasOwnProperty("authUser")){
         if(data.hasOwnProperty("authToken")){
             localStorage.setItem("authToken", data.authToken)
@@ -36,7 +37,6 @@ const submitForm = () =>{
                 userPass.classList.remove("is-invalid");
             }, 2000)
         }
-        loader.classList.add("d-none")
        }
        else{
         emailValidation.classList.add("is-invalid");
