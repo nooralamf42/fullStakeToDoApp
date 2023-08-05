@@ -166,7 +166,7 @@ const onSubmit = () => {
         else{
             localStorage.setItem("tasks", JSON.stringify({"taskList": [{name: taskData.name}]}))
         }
-        renderTasks(taskData, JSON.parse(localStorage.getItem("tasks")).taskList.length)
+        renderTasks(taskData, JSON.parse(localStorage.getItem("tasks")).taskList.length-1)
     }
     if(isLoggedLocally==false){
         taskName.value = "";
