@@ -27,7 +27,7 @@ const submitForm = () =>{
             if(data.token.toUpperCase()){
                 const token= data.token
                 localStorage.setItem("authToken", token)
-                window.location.href = "/welcome.html";
+                window.location.href = "/index.html";
                 localStorage.setItem("userName", userName)
             }
         }catch{
