@@ -159,7 +159,6 @@ const onSubmit = () => {
         isLoggedLocally = true
     }
     else{
-        renderTasks(taskData, JSON.parse(localStorage.getItem("tasks")).taskList.length)
         if(localStorage.getItem("tasks")){
             const previousTasks = JSON.parse(localStorage.getItem("tasks")).taskList
             localStorage.setItem("tasks", JSON.stringify({"taskList": [...previousTasks, {name: taskData.name}]}))
@@ -167,7 +166,7 @@ const onSubmit = () => {
         else{
             localStorage.setItem("tasks", JSON.stringify({"taskList": [{name: taskData.name}]}))
         }
-
+        renderTasks(taskData, JSON.parse(localStorage.getItem("tasks")).taskList.length)
     }
     if(isLoggedLocally==false){
         taskName.value = "";
