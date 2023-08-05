@@ -122,9 +122,9 @@ const deleteTasks = (index) =>{
         })
         document.getElementById("deletingTask").classList.remove("d-none")
         allTaskData.splice(index,1)
-        console.log(index)
-        apiCall("put", UpdateAPI)
-        renderOnLoad()
+        apiCall("put", UpdateAPI).then(()=>{
+            renderOnLoad()
+        })
     }
     else{
         const Tasks = JSON.parse(localStorage.getItem("tasks")).taskList
